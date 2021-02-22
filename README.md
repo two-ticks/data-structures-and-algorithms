@@ -1,6 +1,6 @@
 # Data Structures and Algorithms
 
-main memory : RAM
+main memory -> RAM
 
 database → HDD
 

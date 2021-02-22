@@ -2,6 +2,7 @@
 
 main memory -> RAM
 
+
 database → HDD
 
 
@@ -12,7 +13,11 @@ heap : dynamic
 stack : till program ends 
 
 - time complexity
-O -> 'order of'
+O -> 'order of' 
+
+  slower step decides the order
+
   O(1) -> constant time irrespective of input
+
   O(n) -> most impactful term is of nth order or linear 
   

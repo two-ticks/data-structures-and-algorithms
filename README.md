@@ -4,6 +4,7 @@ main memory : RAM
 
 database → HDD
 
+
 data warehouse 
 
 heap : dynamic

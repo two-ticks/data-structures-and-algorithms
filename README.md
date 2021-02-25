@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Data Structures and Algorithms
 
 main memory -> RAM
@@ -26,8 +25,3 @@ O -> 'order of'
 
   ![Big O](https://amitshahi.dev/static/756663638e3de206cc41988bfa13b7db/2d017/bigocomplexitychart.jpg)
 
-  
-
-=======
-# data-structures-and-algorithms
->>>>>>> 276e497752ab1b67f013423a1c91eaa815901bc4

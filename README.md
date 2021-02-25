@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Data Structures and Algorithms
 
 main memory -> RAM
@@ -27,3 +28,6 @@ O -> 'order of'
 
   
 
+=======
+# data-structures-and-algorithms
+>>>>>>> 276e497752ab1b67f013423a1c91eaa815901bc4

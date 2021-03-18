@@ -10,7 +10,7 @@ printf("\n");
 
 }
 
-int sortedInsertion(int arr[], int size, int element, int capacity,int index){
+int insertion(int arr[], int size, int element, int capacity,int index){
     //insertion
     if(size>=capacity){
         return -1;
@@ -25,9 +25,9 @@ int sortedInsertion(int arr[], int size, int element, int capacity,int index){
 int main()
 {
     int arr[100] = {7,8,12,27,88};
-    int size = 4, element = 45, index = 3;
+    int size = 5, element = 45, index = 3;
     display(arr,size);
-    sortedInsertion(arr, size, element, 100,index);
+    insertion(arr, size, element, 100,index);
     size +=1;
     display(arr,size);
 return 0;

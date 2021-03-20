@@ -55,6 +55,15 @@ struct Node * insertAtIndex(struct Node * head, int data,int index){
     return head;
 }
 
+struct Node * insertAfterNode(struct Node * head,struct Node * prevNode,int data){
+    struct Node * ptr = (struct Node *)malloc(sizeof(struct Node));
+    ptr->data = data;
+    
+    ptr->next = prevNode ->next;
+    prevNode->next =ptr;
+
+    return head;
+}
 int main()
 {
     struct Node *head;
@@ -78,7 +87,8 @@ int main()
 
 //head  = insertAtFirst(head, 56);
 //head  = insertAtIndex(head, 56, 1);
-head  = insertAtEnd(head, 56);
+//head  = insertAtEnd(head, 56);
+head  = insertAfterNode(head, second, 149);
 linkedListTraversal(head);
 return 0;
 

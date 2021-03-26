@@ -39,21 +39,23 @@ int main()
     // s.top = -1;
     // s.arr = (int *) malloc(s.size * sizeof(int));
 
-    struct stack *s=(struct stack *)malloc(sizeof(struct stack));
+    struct stack *s = (struct stack *)malloc(sizeof(struct stack));
     s->size = 80;
     s->top = -1;
     s->arr = (int *)malloc(s->size * sizeof(int));
 
     // Pushing an element manually
-     s->arr[0] = 7;
-     s->top++;
+    s->arr[0] = 7;
+    s->top++;
 
     // Check if stack is empty
-    
-    if(isEmpty(s)){
+
+    if (isEmpty(s))
+    {
         printf("The stack is empty");
     }
-    else{
+    else
+    {
         printf("The stack is not empty");
     }
     return 0;

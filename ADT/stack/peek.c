@@ -69,15 +69,16 @@ int peek(struct stack *sp, int i)
         return sp->arr[array_index];
     }
 }
+
 int main()
 {
-    printf("main\n");
+    //printf("main\n");
 
     struct stack *sp = (struct stack *)malloc(sizeof(struct stack));
     sp->size = 10;
     sp->top = -1;
     sp->arr = (int *)malloc(sp->size * sizeof(int));
-    printf("Stack created!\n");
+    //printf("Stack created!\n");
 
     push(sp, 5);
     push(sp, 15);

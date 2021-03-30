@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-//LIFO
+//LIFO - last in 
 
 struct stack
 {

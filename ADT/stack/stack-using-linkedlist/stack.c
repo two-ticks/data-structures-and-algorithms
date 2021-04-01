@@ -7,7 +7,18 @@ struct Node {
 };
 
 void push(struct Node*top, int x){
-
+    if(isFull){
+            printf("overflow");
+    }
+    else
+    {
+        struct Node* n = (struct Node*)malloc(sizeof(struct Node));
+        n->data = x;
+        n->next = top;
+        top = n;
+        return top;
+    }
+    
 }
 
 void isEmpty(struct Node* top){
@@ -20,7 +31,13 @@ void isEmpty(struct Node* top){
 }
 
 void isFull(struct Node* top){
-
+    struct Node* p = (struct Node*)malloc(sizeof(struct Node));
+    if(p == NULL)
+    {
+        return 1;
+    }
+    
+    return 0;
 }
 
 

@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<stdlib.h>
 
 struct Node {
     int data;
@@ -6,22 +7,20 @@ struct Node {
 
 };
 
-void push(struct Node*top, int x){
-    if(isFull){
-            printf("overflow");
-    }
-    else
+void linkedListTraversal(struct Node *ptr)
+{
+    while (ptr != NULL)
     {
-        struct Node* n = (struct Node*)malloc(sizeof(struct Node));
-        n->data = x;
-        n->next = top;
-        top = n;
-        return top;
+
+        printf("%d\n", ptr->data);
+        ptr = ptr->next;
     }
-    
 }
 
-void isEmpty(struct Node* top){
+
+
+
+int isEmpty(struct Node* top){
     if(top == NULL)
     {
         return 1;
@@ -30,7 +29,7 @@ void isEmpty(struct Node* top){
     return 0;
 }
 
-void isFull(struct Node* top){
+int isFull(struct Node* top){
     struct Node* p = (struct Node*)malloc(sizeof(struct Node));
     if(p == NULL)
     {
@@ -40,11 +39,25 @@ void isFull(struct Node* top){
     return 0;
 }
 
+struct Node* push(struct Node*top, int x){
+    if(isFull(top)){
+            printf("overflow");
+    }
+    else
+    {
+        struct Node* n = (struct Node*)malloc(sizeof(struct Node));
+        n->data = x;
+        n->next = top;
+        top = n;
+        return top;
+    }    
+}
 
 int main(){
 
 struct Node * top = NULL;
 
-//push(top, 78);
-return 0
+top = push(top, 78);
+linkedListTraversal(top);
+return 0;
 }

@@ -17,9 +17,6 @@ void linkedListTraversal(struct Node *ptr)
     }
 }
 
-
-
-
 int isEmpty(struct Node* top){
     if(top == NULL)
     {
@@ -53,11 +50,35 @@ struct Node* push(struct Node*top, int x){
     }    
 }
 
+int pop(struct Node* *top)
+{
+    if (isEmpty(top))
+    {
+        printf("Stack Underflow");
+        return -1;
+    }
+    else
+    {
+        struct Node* n = *top;
+        *top = (*top)->next;
+        int x = n->data;
+        free(n);
+        return x;
+    }
+}
+
+
 int main(){
 
-struct Node * top = NULL;
+    struct Node * top = NULL;
+    top = push(top, 58);
+    top = push(top, 68);
+    top = push(top, 708);
+    top = push(top, 78);
+    int element = pop(&top); // can also be done with global variable
+    printf("popped: %d\n", element);
+    linkedListTraversal(top);
 
-top = push(top, 78);
-linkedListTraversal(top);
 return 0;
 }
+

@@ -8,6 +8,7 @@ struct Driver
     char route[47];
     int kms;
 };
+
 int main()
 {
     struct Driver d1,d2,d3;

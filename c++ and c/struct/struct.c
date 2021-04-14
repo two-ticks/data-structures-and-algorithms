@@ -1,4 +1,6 @@
-//drivers
+//struct -> if access specifier is not declared explicitly, then by default access specifier will be public	
+//class -> if access specifier is not declared explicitly, then by default access specifier will be private
+
 #include<stdio.h>
 
 struct Driver 

@@ -6,6 +6,7 @@
         "type_traits": "c",
         "xstring": "c",
         "xutility": "c",
-        "xmemory": "cpp"
+        "xmemory": "cpp",
+        "string.h": "c"
     }
 }

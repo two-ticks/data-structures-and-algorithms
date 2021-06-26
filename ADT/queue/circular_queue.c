@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-struct queue
+struct circularQueue
 {
     int size;
     int f;
@@ -14,16 +14,16 @@ struct queue
     int *arr;
 };
 
-int isFull(struct queue *q)
+int isFull(struct circularQueue *q)
 {
-    if (q->r == q->size - 1)
+    if ((q->r + 1) % (q->size) == q->f)
     {
         return 1;
     }
     return 0;
 }
 
-int isEmpty(struct queue *q)
+int isEmpty(struct circularQueue *q)
 {
     if (q->r == q->f)
     {
@@ -32,7 +32,7 @@ int isEmpty(struct queue *q)
     return 0;
 }
 
-int dequeue(struct queue *q)
+int dequeue(struct circularQueue *q)
 {
     int re = -1; //default return for failure
     if (isEmpty(q))
@@ -40,13 +40,13 @@ int dequeue(struct queue *q)
 
     else
     {
-        q->f++;
+        q->f = (q->f + 1) % (q->size);
         re = q->arr[q->f];
     }
     return re;
 }
 
-void enqueue(struct queue *q, int val)
+void enqueue(struct circularQueue *q, int val)
 {
     if (isFull(q))
     {
@@ -54,7 +54,7 @@ void enqueue(struct queue *q, int val)
     }
     else
     {
-        q->r++;
+        q->r = (q->r + 1) % (q->size);
         q->arr[q->r] = val;
         printf("Enqueuing %d\n", val);
     }
@@ -62,15 +62,18 @@ void enqueue(struct queue *q, int val)
 
 int main()
 {
-    struct queue q;
-    q.size = 100;
-    q.f = q.r = -1;
+    struct circularQueue q;
+    q.size = 4;
+    q.f = q.r = 0;
     q.arr = (int *)malloc(q.size * sizeof(int));
 
-    // if (isEmpty(&q))
-    //     printf("empty\n");
     enqueue(&q, 12);
     enqueue(&q, 15);
+    enqueue(&q, 15);
+    enqueue(&q, 15);
     printf("Dequeuing %d\n", dequeue(&q));
+    printf("Dequeuing %d\n", dequeue(&q));
+    printf("Dequeuing %d\n", dequeue(&q));
+    enqueue(&q, 15);
     return 0;
 }

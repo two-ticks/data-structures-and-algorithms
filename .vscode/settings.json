@@ -7,6 +7,9 @@
         "xstring": "c",
         "xutility": "c",
         "xmemory": "cpp",
-        "string.h": "c"
+        "string.h": "c",
+        "iostream": "cpp",
+        "array": "cpp",
+        "vector": "cpp"
     }
 }

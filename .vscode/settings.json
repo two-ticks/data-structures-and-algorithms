@@ -10,6 +10,7 @@
         "string.h": "c",
         "iostream": "cpp",
         "array": "cpp",
-        "vector": "cpp"
+        "vector": "cpp",
+        "algorithm": "c"
     }
 }

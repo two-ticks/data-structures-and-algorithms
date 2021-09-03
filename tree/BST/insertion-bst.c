@@ -8,27 +8,6 @@ struct node
     struct node *right;
 };
 
-struct node *search(struct node *root, int key)
-{
-
-    if (root == NULL)
-    {
-        return NULL;
-    }
-    if (key == root->data)
-    {
-        return root;
-    }
-    else if (key < root->data)
-    {
-        return search(root->left, key);
-    }
-    else
-    {
-        return search(root->right, key);
-    }
-}
-
 struct node *createNode(int data)
 {
     struct node *n;                                 //creating a node pointer
@@ -38,6 +17,34 @@ struct node *createNode(int data)
     n->right = NULL;
 
     return n; // return node
+}
+
+void insert(struct node *root, int key)
+{
+    struct node *prev = NULL;
+    while (root != NULL)
+    {
+        prev = root;
+        if (key == root->data)
+        {
+            printf("Insertion of duplicate element is not allowed!!");
+            return;
+        }
+        else if (key < root->data)
+        {
+            root = root->left;
+        }
+        else
+            root = root->right;
+    }
+
+    struct node *new = createNode(key);
+    if (key < prev->data)
+    {
+        prev->left = new;
+    }
+    else
+        prev->right = new;
 }
 
 int main()
@@ -61,13 +68,8 @@ int main()
     p1->left = p3;
     p1->right = p4;
 
-    struct node *n = search(p, 6);
-    if (n != NULL)
-    {
-        printf("%d", n->data);
-    }
-    else
-        printf("Not in BST");
+    insert(p, 7);
 
+    printf("%d", p->right->right->data);
     return 0;
 }

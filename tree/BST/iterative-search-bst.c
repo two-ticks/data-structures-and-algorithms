@@ -41,29 +41,6 @@ struct node *createNode(int data)
     return n; // return node
 }
 
-int isBST(struct node *root)
-{
-    static struct node *prev = NULL;
-    if (root != NULL)
-    {
-        //left subtree -> root -> right subtree
-
-        if (!isBST(root->left))
-        {
-            return 0;
-        }
-        // check for ascending inorder transversal
-        if (prev != NULL && root->data <= prev->data)
-        {
-            return 0;
-        }
-        prev = root;
-        return isBST(root->right);
-    }
-    else
-        return 1;
-}
-
 int main()
 {
 

@@ -20,7 +20,7 @@ struct node
 int main()
 {
     node A = node("At", 79, 91.0, 'a');
-    cout<< A.str;
+    cin<< A.str;
 
     return 0;
 }

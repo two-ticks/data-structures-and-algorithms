@@ -24,3 +24,6 @@ O -> 'order of'
   Big O : `A function f(n) is said to be O(g(n)) iff there exists a constant c and n_o such that 0<=f(n)<=cg(n) for n>=n_o`
 
 
+
+# Resources
+- [Grind 75](https://www.techinterviewhandbook.org/grind75)
